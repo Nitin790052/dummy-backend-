@@ -6,7 +6,9 @@ import fs from "fs";
 const app = express();
 
 // middleware
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 app.use(express.json());
 
 // Ensure uploads directory exists

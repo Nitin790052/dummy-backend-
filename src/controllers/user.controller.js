@@ -16,7 +16,7 @@ export const createUser = async (req, res) => {
     const user = await User.create({
       firstName: req.body.firstName,
       email: req.body.email,
-      mobile: req.body.mobile,
+      age: req.body.age,
       image: req.file ? req.file.filename : null
     });
 
@@ -95,12 +95,12 @@ export const updateUser = async (req, res) => {
 
     const { id } = req.params;
 
-    const { firstName, email, mobile } = req.body;
+    const { firstName, email, age } = req.body;
 
     const updateData = {
       firstName,
       email,
-      mobile
+      age
     };
 
     if (req.file) {
